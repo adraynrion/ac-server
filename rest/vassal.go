@@ -2,12 +2,13 @@ package rest
 
 type (
 	Vassal struct {
-		name         string
-		workSpeed    uint8
-		instructList []Instruct
+		Id           uint64     `json:"id"`
+		Name         string     `json:"name"`
+		WorkSpeed    uint8      `json:"workSpeed"`
+		InstructList []Instruct `json:"instructList,omitempty"`
 	}
 )
 
 func (v *Vassal) GetName() string {
-	return v.name
+	return v.Name
 }
